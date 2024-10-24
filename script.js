@@ -85,15 +85,22 @@ function searchMonster(monsterName) {
             if (monsterData.speed.climb) {
               speedHTML += `| Climbing: ${monsterData.speed.climb} `;
             }
+            const imageUrl = `https://www.dnd5eapi.co${monsterData.image}`;
+            const imageHTML = monsterData.image 
+            ? `<img class="monster-image" src="${imageUrl}" alt="an image depicting the Dungeons and Dragons monster: ${monsterData.name}" />` 
+            : '';
             monsterResult.innerHTML = `
               <h2>${monsterData.name}</h2>
+              <div>
               <p><strong>Size:</strong> ${monsterData.size}</p>
-              <p><strong>Type:</strong> ${monsterData.type + " " + monsterData.alignment}</p>
+              <p><strong>Type:</strong> ${monsterData.type + ", " + monsterData.alignment}</p>
               <p><strong>Armour Class:</strong> ${monsterData.armor_class[0].value + " " + monsterData.armor_class[0].type}</p>
               <p><strong>Hit Points:</strong> ${monsterData.hit_points}</p>
               <p><strong>Hit Dice:</strong> ${monsterData.hit_points_roll}</p>
               <p>${speedHTML.trim()}</p>
               <!-- You can display more monster details here -->
+              </div>
+              <div class="monster-image-container">${imageHTML}</div>
             `;
           })
           .catch((error) => {

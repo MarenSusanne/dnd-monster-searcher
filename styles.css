@@ -46,11 +46,6 @@ body {
     border-radius: 4px;
     text-align: left;
   }
-  datalist {
-    max-height: 20vh;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-  }
   
   option {
     padding: 8px;
@@ -58,12 +53,13 @@ body {
   }
   .autocomplete-items {
     position: absolute;
-    width: 28%;
+    width: 255px;
     border: 1px solid #ccc;
     background-color: white;
-    max-height: 150px; 
+    max-height: 200px;
     overflow-y: auto;
     z-index: 99;
+    margin-top: -10px;
   }
   .autocomplete-item {
     padding: 10px;
@@ -73,8 +69,12 @@ body {
   .autocomplete-item:hover {
     background-color: #f0f0f0;
   }
-  
-  
   .autocomplete-items:empty {
     display: none;
+  }
+  .monster-image{
+    width: 20vw;
+  }
+  .monster-image-container{
+    text-align: center;
   }
